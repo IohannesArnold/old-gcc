@@ -23,6 +23,10 @@
   $Author$
   $Date$
   $Log$
+ * Revision 0.4  1991/11/19  12:37:49  dennisg
+ * changed typedef and struct decls.
+ * the run-time was changed and those decls changed too.
+ *
  * Revision 0.3  1991/11/16  15:57:35  dennisg
  * changed the defs for class structures for new implementation of run-time.
  * changed def of SEL back to its original type.
@@ -71,7 +75,11 @@ typedef char  BOOL;
                                                   class hierarchy using 
                                                   strcmp() to locate the
                                                   method. */
+#if 0
 typedef struct objc_selector*   SEL;
+#else
+typedef void* SEL;
+#endif
 
                                                 /* ObjC uses this typedef 
                                                   for untyped instances. */
