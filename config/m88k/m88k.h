@@ -1,6 +1,6 @@
-/* Definitions of target machine for GNU compiler.
+/* Definitions of target machine for GNU compiler for
    Motorola m88100 in an 88open OCS/BCS environment.
-   Copyright (C) 1988, 1989, 1990, 1991, 1993 Free Software Foundation, Inc.
+   Copyright (C) 1988, 89, 90, 91, 93, 1994 Free Software Foundation, Inc.
    Contributed by Michael Tiemann (tiemann@mcc.com)
    Enhanced by Michael Meissner (meissner@osf.org)
    Version 2 port by Tom Wood (twood@pets.sps.mot.com)
@@ -1966,6 +1966,7 @@ do {									 \
 	 && DECL_INITIAL (DECL) == error_mark_node			 \
 	 && !size_directive_output)					 \
        {								 \
+	 size_directive_output = 1;					 \
 	 fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);			 \
 	 assemble_name (FILE, name);					 \
 	 fprintf (FILE, ",%d\n",  int_size_in_bytes (TREE_TYPE (DECL))); \
