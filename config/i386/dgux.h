@@ -132,6 +132,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
     extern int flag_signed_bitfields;			\
     flag_signed_bitfields = 0;				\
     abort_helper ();					\
+    optimization_options (LEVEL);			\
   } while (0)
 
 
