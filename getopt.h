@@ -130,4 +130,4 @@ extern int _getopt_internal ();
 }
 #endif
 
-#endif /* getopt.h */
+#endif /* _GETOPT_H */
