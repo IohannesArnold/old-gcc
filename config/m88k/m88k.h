@@ -1849,6 +1849,7 @@ enum reg_class { NO_REGS, AP_REG, XRF_REGS, GENERAL_REGS, AGRF_REGS,
   fprintf (FILE, "\t%s\t \"%s\"\n", FILE_ASM_OP, NAME)
 
 #ifdef SDB_DEBUGGING_INFO
+#undef ASM_OUTPUT_SOURCE_LINE
 #define ASM_OUTPUT_SOURCE_LINE(FILE, LINE)			\
   if (m88k_prologue_done)					\
     fprintf (FILE, "\n\tln\t %d\t\t\t\t; Real source line %d\n",\
