@@ -20,6 +20,9 @@
   $Author$
   $Date$
   $Log$
+ * Revision 0.10  1991/12/10  12:05:28  dennisg
+ * Cleaned up file format for a distribution.
+ *
  * Revision 0.9  1991/12/03  02:01:23  dennisg
  * fixed assert macro.
  * added memory allocation adjustment macro for hash size allocation.
@@ -67,8 +70,10 @@
 #include  <ObjC-private.h>
 
 #include  <assert.h>
-#include  <libc.h>
 #include  <math.h>
+#include  <stdio.h>
+#include  <stdlib.h>
+
 
                                                 /* These two macros determine
                                                   when a hash table is full and
