@@ -1,7 +1,7 @@
 /* Definitions of target machine for GNU compiler for
    Motorola m88100 in an 88open OCS/BCS environment.
    Copyright (C) 1988, 92, 93, 94, 95, 1996 Free Software Foundation, Inc.
-   Contributed by Michael Tiemann (tiemann@cygnus.com)
+   Contributed by Michael Tiemann (tiemann@cygnus.com).
    Currently maintained by (gcc@dg-rtp.dg.com)
 
 This file is part of GNU CC.
@@ -2036,6 +2036,11 @@ do {									 \
     assemble_name (FILE, NAME);				\
     putc ('\n', FILE);					\
   } while (0)
+
+/* The prefix to add to user-visible assembler symbols.
+   Override svr[34].h.  */
+#undef USER_LABEL_PREFIX
+#define USER_LABEL_PREFIX "_"
 
 /* This is how to output a reference to a user-level label named NAME.
    Override svr[34].h.  */
