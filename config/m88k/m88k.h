@@ -1719,6 +1719,11 @@ enum reg_class { NO_REGS, AP_REG, XRF_REGS, GENERAL_REGS, AGRF_REGS,
 
 /* Control the assembler format that we output.  */
 
+/* A C string constant describing how to begin a comment in the target
+   assembler language.  The compiler assumes that the comment will end at
+   the end of the line.  */
+#define ASM_COMMENT_START ";"
+
 /* Allow pseudo-ops to be overridden.  Override these in svr[34].h.  */
 #undef	INT_ASM_OP
 #undef	ASCII_DATA_ASM_OP
