@@ -25,6 +25,11 @@
   $Author$
   $Date$
   $Log$
+ * Revision 0.5  1991/11/23  22:19:21  dennisg
+ * converted some entries in the hash structure from ints to shorts.
+ * this was done to use a less expensive division instruction
+ * in the hashIndex() routine.
+ *
  * Revision 0.4  1991/11/21  22:25:19  dennisg
  * deleted hash mask information from hash struct.
  * changed hashing algorithm.  those values are no longer needed.
@@ -93,7 +98,7 @@ typedef struct cache {
 	 * Variables used to track the size of the hash
 	 *	table so to determine when to resize it.
 	 */
-  u_short     sizeOfHash,                         /* Number of buckets 
+  u_int       sizeOfHash,                         /* Number of buckets 
                                                     allocated for the hash
                                                     table (number of array
                                                     entries allocated for
