@@ -25,6 +25,9 @@
   $Author$
   $Date$
   $Log$
+ * Revision 0.3  1991/11/07  23:23:40  dennisg
+ * implemented hash table expansion as suggested by rms.
+ *
  * Revision 0.2  1991/11/07  22:30:54  dennisg
  * added copyleft
  *
@@ -93,18 +96,6 @@ typedef struct cache {
                                                     "theNodeTable"). */
 							entriesInHash;											/* Current number of entries
 																										in ther hash table. */
-	/*
-	 * Variables used to compute hash
-	 *	values.
-	 */
-  u_int       mask,                               /* The number of bits set 
-																										in the mask that is
-																										contained in the next 
-																										member variable. */
-              numberOfMaskBits;                   /* Number of bits used for
-                                                    the mask.  Useful for 
-                                                    efficient hash value
-                                                    calculation. */
   /*
    * Variables used to implement indexing
    *  through the hash table.
