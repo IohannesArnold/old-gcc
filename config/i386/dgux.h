@@ -277,3 +277,7 @@ char insn; int insn_; char * file_; int line_;
 	 fprintf ((FILE), "\t.backalign %s,%d,%d\n", &buf[1], 1<<(LOG), \
 		  ((TARGET_PENTIUMPRO || TARGET_486) && LOG==4) ? 6 : 2);\
         }
+
+/* add .align 1 to avoid .backalign bug in assembler */
+#undef CONST_SECTION_ASM_OP
+#define CONST_SECTION_ASM_OP    ".section\t.rodata\n\t.align 1"
