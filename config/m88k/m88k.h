@@ -224,6 +224,7 @@ extern char * reg_names[];
 #define MASK_OCS_DEBUG_INFO	0x00000004 /* Emit .tdesc info */
 #define MASK_OCS_FRAME_POSITION	0x00000008 /* Debug frame = CFA, not r30 */
 #define MASK_SVR4		0x00000010 /* Target is AT&T System V.4 */
+#define MASK_SVR3		0x00000020 /* Target is AT&T System V.3 */
 #define MASK_NO_UNDERSCORES	0x00000040 /* Don't emit a leading `_' */
 #define MASK_BIG_PIC		0x00000080 /* PIC with large got-rel's -fPIC */
 #define MASK_TRAP_LARGE_SHIFT	0x00000100 /* Trap if shift not <= 31 */
@@ -246,6 +247,7 @@ extern char * reg_names[];
 #define TARGET_OCS_DEBUG_INFO	  (target_flags & MASK_OCS_DEBUG_INFO)
 #define TARGET_OCS_FRAME_POSITION (target_flags & MASK_OCS_FRAME_POSITION)
 #define TARGET_SVR4		  (target_flags & MASK_SVR4)
+#define TARGET_SVR3		  (target_flags & MASK_SVR3)
 #define TARGET_NO_UNDERSCORES	  (target_flags & MASK_NO_UNDERSCORES)
 #define TARGET_BIG_PIC		  (target_flags & MASK_BIG_PIC)
 #define TARGET_TRAP_LARGE_SHIFT   (target_flags & MASK_TRAP_LARGE_SHIFT)
@@ -329,6 +331,11 @@ extern char * reg_names[];
 	for (i = 0; i < FIRST_PSEUDO_REGISTER; i++)			     \
 	  reg_names[i]--;						     \
 	m88k_pound_sign = "#";						     \
+      }									     \
+    else								     \
+      {									     \
+	target_flags |= MASK_SVR3;					     \
+	target_flags &= ~MASK_SVR4;					     \
       }									     \
 									     \
     if (m88k_short_data)						     \
