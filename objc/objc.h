@@ -23,6 +23,10 @@
   $Author$
   $Date$
   $Log$
+ * Revision 0.10  1991/12/31  20:16:08  dennisg
+ * Deleted index variable stuff.  Index variables are a hack to the language.
+ * Cleaned up some documentation.
+ *
  * Revision 0.9  1991/12/10  12:04:22  dennisg
  * Cleaned up file format for a distribution.
  *
@@ -69,12 +73,12 @@ extern "C" {
 #endif
 
 #include  <sys/types.h>
-#include  <hash.h>
+#include  <record-inline.h>
 #include  <stdarg.h>
 
 
-#define nil ( id )0                             /* id of Nil instance */
-#define Nil ( Class_t )0                        /* id of Nil class */
+#define nil (id)0                               /* id of Nil instance */
+#define Nil (Class_t)0                          /* id of Nil class */
 typedef char* STR;                              /* String alias */
 
                                                 /* Boolean typedefs */
@@ -292,11 +296,8 @@ typedef struct objc_metaClass {
                                                 Object.  Should be ignored. */
   MethodList_t            methods;            /* Linked List of factory methods 
                                                 for the class. */
-  Cache_t                 cache;              /* Used to cache factory methods
-                                                defined for the class and its 
-                                                super classes.  Entries are
-                                                made to the cache as the
-                                                messager receives them. */
+  Record_t*               cache;              /* Pointer to factory method
+																								dispatch table. */
 } MetaClass, *MetaClass_t;
 
 
@@ -334,11 +335,8 @@ typedef struct objc_class {
   MethodList_t        methods;                /* Linked list of instance
                                                 methods defined for the 
                                                 class. */
-  Cache_t             cache;                  /* Used to cache instance methods
-                                                defined for the class and its 
-                                                super classes.  Entries are
-                                                made to the cache as the
-                                                messager receives them. */
+  Record_t*           cache;                  /* Pointer to instance method 
+																								dispatch table. */
 } Class, *Class_t;
 
 
