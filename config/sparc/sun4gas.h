@@ -1,5 +1,5 @@
-/* Definitions of target machine for GNU compiler, for SunOS 4.x
-   Copyright (C) 1994 Free Software Foundation, Inc.
+/* Definitions of target machine for GNU compiler, for SunOS 4.x with gas
+   Copyright (C) 1997 Free Software Foundation, Inc.
 
 This file is part of GNU CC.
 
@@ -18,13 +18,10 @@ along with GNU CC; see the file COPYING.  If not, write to
 the Free Software Foundation, 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.  */
 
-#define SUNOS4_SHARED_LIBRARIES 1
+/* gas supports unaligned data.  */
+#define UNALIGNED_DOUBLE_INT_ASM_OP ".uaxword"
+#define UNALIGNED_INT_ASM_OP	".uaword"
+#define UNALIGNED_SHORT_ASM_OP	".uahalf"
 
-/* Use N_BINCL stabs.  */
-
-#define DBX_USE_BINCL
-
-#include "sparc/sparc.h"
-
-/* The Sun as doesn't like unaligned data.  */
-#define DWARF2_UNWIND_INFO 0
+/* defaults.h will define DWARF2_UNWIND_INFO for us.  */
+#undef DWARF2_UNWIND_INFO
