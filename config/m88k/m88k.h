@@ -1085,7 +1085,7 @@ enum reg_class { NO_REGS, AP_REG, XRF_REGS, GENERAL_REGS, AGRF_REGS,
    of an argument with the specified mode and type.  If it is not defined,
    `PARM_BOUNDARY' is used for all arguments.  */
 #define FUNCTION_ARG_BOUNDARY(MODE, TYPE) \
-  (((TYPE) ? TYPE_ALIGN (TYPE) : GET_MODE_SIZE (MODE)) <= PARM_BOUNDARY \
+  (((TYPE) ? TYPE_ALIGN (TYPE) : GET_MODE_BITSIZE (MODE)) <= PARM_BOUNDARY \
     ? PARM_BOUNDARY : 2 * PARM_BOUNDARY)
 
 /* Generate necessary RTL for __builtin_saveregs().
