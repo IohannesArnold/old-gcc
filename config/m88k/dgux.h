@@ -64,6 +64,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 #define TARGET_DEFAULT	(MASK_CHECK_ZERO_DIV	 | \
 			 MASK_OCS_DEBUG_INFO	 | \
 			 MASK_OCS_FRAME_POSITION | \
+			 MASK_STANDARD		 | \
 			 MASK_SVR4)
 #undef	CPU_DEFAULT
 #define CPU_DEFAULT MASK_88000
