@@ -1,7 +1,6 @@
 /* Target definitions for GNU compiler for Intel 80x86 running DG/ux
-   Copyright (C) 1993, 1995 Free Software Foundation, Inc.
-
-   Currently maintained by (gcc@dg-rtp.dg.com)
+   Copyright (C) 1993, 1995, 1996 Free Software Foundation, Inc.
+   Currently maintained by gcc@dg-rtp.dg.com.
 
 This file is part of GNU CC.
 
@@ -90,13 +89,6 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE BITS_PER_WORD
 
-
-/* Define this to be nonzero if the character `$' should be allowed
-   by default in identifier names.  DG/ux does this differently than
-   standard i386 */
-
-#undef  DOLLARS_IN_IDENTIFIERS
-#define DOLLARS_IN_IDENTIFIERS  1
 
 /* Some machines may desire to change what optimizations are performed for
    various optimization levels.   This macro, if defined, is executed once

@@ -1708,10 +1708,6 @@ enum reg_class { NO_REGS, AP_REG, XRF_REGS, GENERAL_REGS, AGRF_REGS,
       (COST) -= 4; /* 88110 store reservation station.  */		\
   } while (0)
 
-/* Define this to be nonzero if the character `$' should be allowed
-   by default in identifier names.  */
-#define	DOLLARS_IN_IDENTIFIERS	1
-
 /* Do not break .stabs pseudos into continuations.  */
 #define DBX_CONTIN_LENGTH 0
 
