@@ -2552,7 +2552,10 @@ sdata_section ()							\
       if (SYMBOL_REF_FLAG (XEXP (DECL_RTL (DECL), 0)))			\
 	sdata_section ();						\
       else if ((flag_pic && RELOC)					\
-	  || !TREE_READONLY (DECL) || TREE_SIDE_EFFECTS (DECL))		\
+	       || !TREE_READONLY (DECL) || TREE_SIDE_EFFECTS (DECL)	\
+	       || !DECL_INITIAL (DECL)					\
+	       || (DECL_INITIAL (DECL) != error_mark_node		\
+		   && !TREE_CONSTANT (DECL_INITIAL (DECL))))		\
 	data_section ();						\
       else								\
 	const_section ();						\
